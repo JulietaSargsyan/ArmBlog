@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/header.ejs') %>
+    <div class="main">
+        <h2 class="main__title">All Blogs</h2>
+        <div class="blogs-container">
+        <% if(blogs.length) { %>
+            <% blogs.forEach((blog) => { %>
+                <div class="blog-item">
+                    <h3 class="title"><%= blog.title%></h3>
+                    <img src=<%= blog.img %> alt="">
+                    <p class="text"><%= blog.text %></p>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>There are no blogs to display</p>
+        <% } %>
+        </div>
+    </div>
+    <%- include('./partials/footer.ejs') %> 
+</body>
+</html>
